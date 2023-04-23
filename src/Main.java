@@ -263,7 +263,12 @@ System.out.println("Your current game board:");
 
 
 
+"פונקציה חמישית זה עובד תלוי אם נמצא בעיות אבל סביר להניח שלא, צריך להתאים לגאווה ולא פייתון"
 
+if (((x+1)>(n))or((y+1)>(m))or((matrix[x+1][y+1])=='-'))and(((x+1)>(n))or((y-1)<1)or((matrix[x+1][y-1])=='-'))and(((x-1)<1)or((y+1)>(m))or((matrix[x-1][y+1])=='-'))and(((x-1)<1)or((y-1)<1)or((matrix[x-1][y-1])=='-'))and(((x-1)<1)or((matrix[x-1][y])=='-')) and (((x+1)>(n))or((matrix[x+1][y])=='-')) and (((y-1)<1)or((matrix[x][y-1])=='-')) and (((y+1)>(m))or((matrix[x][y+1])=='-')):
+    print("cord is available")
+else:
+    print("not available")
 
 
 
