@@ -271,4 +271,43 @@ else:
     print("not available")
 
 
+    public static int sum_Digits(int n){
+        int counter = 0;
+        if(n==0)
+            return 1;
+        while(n!=0){
+            n /= 10;
+            counter++;
+        }
+        return counter;
+    }
+
+    public static String[][] matrix(int n, int m) {
+        String[][] matrix = new String[n + 1][m + 1];
+        for (int i = 1; i < n + 1; i++) {
+            for (int j = 1; j < m + 1; j++)
+                matrix[i][j] = "–";
+        }
+        int num_Spaces = sum_Digits(n);
+        matrix[0][0] = "";
+        for (int k = 0; k < num_Spaces; k++)
+            matrix[0][0]+=" ";
+        for (int j = 0; j + 1 < m + 1; j++) {
+            matrix[0][j + 1] = j + "";
+        }
+        for (int i = 0; i + 1 < n + 1; i++) {
+            int sum_Spaces =num_Spaces-sum_Digits(i);
+            matrix[i+1][0]= "";
+            for (int l = 0; l < sum_Spaces; l++)
+                matrix[i+1][0]+= " ";
+            matrix[i + 1][0]+= i + "";
+        }
+        for (int i = 0; i < n + 1; i++) {
+            for (int j = 0; j < m + 1; j++)
+                System.out.print(matrix[i][j] + " ");
+            System.out.println();
+        }
+        return matrix;
+    }
+
 
